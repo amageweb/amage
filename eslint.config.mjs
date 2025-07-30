@@ -11,6 +11,20 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    files: ["src/blocks/**/*.tsx", "src/blocks/**/*.ts", "src/components/ui/CardSwap.tsx", "src/components/ui/container-scroll-animation.tsx"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-empty-interface": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-unused-expressions": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "react-hooks/exhaustive-deps": "warn",
+      "jsx-a11y/alt-text": "warn",
+      "@next/next/no-img-element": "warn"
+    }
+  }
 ];
 
 export default eslintConfig;

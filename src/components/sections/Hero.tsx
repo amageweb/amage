@@ -2,12 +2,11 @@
 
 import React, { memo, useState, useEffect } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import PageTransition from '@/components/PageTransition'
 import Noise from '@/blocks/Animations/Noise/Noise'
 import { usePageTransition } from '@/contexts/PageTransitionContext'
 import { ConfettiButton } from '@/components/magicui/confetti'
-import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
 import { LiquidGlassButton } from '@/components/ui/liquid-glass-button'
 
 

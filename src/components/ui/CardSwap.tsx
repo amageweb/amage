@@ -148,7 +148,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
           }}
           className="card"
         >
-          {child.props.children}
+          {(child as any).props.children}
         </div>
       ))}
     </div>

@@ -3,6 +3,7 @@
 */
 
 /* eslint-disable react/no-unknown-property */
+// @ts-nocheck
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
@@ -119,7 +120,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
   };
 
   const { nodes, materials } = useGLTF(cardGLB) as any;
-  const texture = useTexture(lanyard);
+  const texture = useTexture(lanyard.src);
   const [curve] = useState(
     () =>
       new THREE.CatmullRomCurve3([

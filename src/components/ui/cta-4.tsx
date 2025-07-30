@@ -15,7 +15,6 @@ export const Cta4 = ({
   description = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto illo praesentium nisi, accusantium quae.",
   buttonText = "Get Started",
   buttonUrl = "#",
-  items = [],
 }: Cta4Props) => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   

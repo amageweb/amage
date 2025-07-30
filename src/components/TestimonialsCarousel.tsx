@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useAnimationControls, useMotionValue, animate } from 'framer-motion'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 
 interface Testimonial {
   text: string
@@ -18,7 +18,6 @@ export const TestimonialsCarousel = ({ testimonials, duration = 30 }: Testimonia
   const controls = useAnimationControls()
   const [isPaused, setIsPaused] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   
@@ -33,9 +32,8 @@ export const TestimonialsCarousel = ({ testimonials, duration = 30 }: Testimonia
 
   const cardWidth = isMobile ? window.innerWidth - 60 : 200 // Largura do card = largura da tela - padding
   const gap = isMobile ? 20 : 12
-  const totalWidth = (cardWidth + gap) * testimonials.length
 
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: { offset: { x: number }; velocity: { x: number } }) => {
     const offset = info.offset.x
     const velocity = info.velocity.x
     
@@ -141,7 +139,7 @@ export const TestimonialsCarousel = ({ testimonials, duration = 30 }: Testimonia
                 fontWeight: 400,
                 flexGrow: 1
               }}>
-                "{testimonial.text}"
+                {`"${testimonial.text}"`}
               </p>
               
               <div style={{
@@ -221,7 +219,7 @@ export const TestimonialsCarousel = ({ testimonials, duration = 30 }: Testimonia
                 fontWeight: 400,
                 flexGrow: 1
               }}>
-                "{testimonial.text}"
+                {`"${testimonial.text}"`}
               </p>
               
               <div style={{
@@ -276,3 +274,4 @@ export const TestimonialsCarousel = ({ testimonials, duration = 30 }: Testimonia
       </div>
     </div>
   )
+}

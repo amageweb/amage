@@ -46,14 +46,13 @@ export default function FloatingButtons() {
             <svg
               width="28"
               height="28"
-              className="w-7 h-7 sm:w-8 sm:h-8"
+              className="w-7 h-7 sm:w-8 sm:h-8 hover:stroke-[#8B4FA6] transition-colors duration-200"
               viewBox="0 0 24 24"
               fill="none"
               stroke="#6F278B"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="hover:stroke-[#8B4FA6] transition-colors duration-200"
               style={{
                 filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.3))',
                 cursor: 'pointer'

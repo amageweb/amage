@@ -48,7 +48,6 @@ const services = [
 
 export default function Services() {
   const containerRef = useRef(null)
-  const stickyRef = useRef(null)
   const [isDesktop, setIsDesktop] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
   const [hasTriggeredPause, setHasTriggeredPause] = useState(false)
@@ -94,7 +93,7 @@ export default function Services() {
         setTimeout(() => {
           const currentScrollY = window.scrollY
           
-          const preventScroll = (e) => {
+          const preventScroll = (e: Event) => {
             e.preventDefault()
             window.scrollTo(0, currentScrollY)
           }

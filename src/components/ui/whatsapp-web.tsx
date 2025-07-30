@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
-import { Send } from 'lucide-react'
 
 interface Message {
   id: number

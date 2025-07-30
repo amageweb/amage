@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
-import StarBorder from '@/blocks/Animations/StarBorder/StarBorder'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePageTransition } from '@/contexts/PageTransitionContext'
 
@@ -19,19 +18,12 @@ const navItems: NavItem[] = [
 ]
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [activeSection, setActiveSection] = useState('home')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isDarkBackground, setIsDarkBackground] = useState(true)
   const { isTransitionComplete } = usePageTransition()
-  
-  const { scrollY } = useScroll()
 
-  // Controla apenas o estado de scroll (não esconde mais)
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 50)
-  })
 
   // Detecta seção ativa e cor de fundo
   useEffect(() => {

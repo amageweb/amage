@@ -80,12 +80,6 @@ export default function Process() {
   // Progress bar transform
   const progressScaleX = useTransform(scrollYProgress, [0, 1], [0, 1])
 
-  const stepTransforms = [
-    { opacity: opacity1, scale: scale1, filter: blurFilter1 },
-    { opacity: opacity2, scale: scale2, filter: blurFilter2 },
-    { opacity: opacity3, scale: scale3, filter: blurFilter3 },
-    { opacity: opacity4, scale: scale4, filter: blurFilter4 }
-  ]
 
   return (
     <section 
