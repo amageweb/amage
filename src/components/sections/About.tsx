@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
@@ -35,21 +35,6 @@ export default function About() {
     amount: isMobile ? 0.1 : 0.3 
   })
   
-  // Animação baseada no scroll
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  })
-  
-  const opacityTransform = useTransform(scrollYProgress, [0.15, 0.3], [0, 1])
-  const yTransform = useTransform(scrollYProgress, [0.15, 0.3], [50, 0])
-  const scaleTransform = useTransform(scrollYProgress, [0.15, 0.3], [0.9, 1])
-  const rotateTransform = useTransform(scrollYProgress, [0.15, 0.3], [-5, 0])
-  
-  const opacity = isMobile ? 1 : opacityTransform
-  const y = isMobile ? 0 : yTransform
-  const scale = isMobile ? 1 : scaleTransform
-  const rotate = isMobile ? 0 : rotateTransform
 
   // Debug log para mobile
   useEffect(() => {
@@ -191,33 +176,55 @@ export default function About() {
           {/* SVG Background Animado - apenas desktop */}
           {!isMobile && (
             <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.95, rotate: -2 }}
+              animate={{ 
+                opacity: isInView ? 1 : 0,
+                y: isInView ? 0 : 30,
+                scale: isInView ? 1 : 0.95,
+                rotate: isInView ? 0 : -2
+              }}
+              transition={{ 
+                duration: 0.8, 
+                ease: "easeOut",
+                delay: 0.2 
+              }}
               style={{
-                opacity: opacity as number,
-                y: y as number,
-                scale: scale as number,
-                rotate: rotate as number,
                 position: 'relative',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                willChange: 'transform, opacity',
-                transform: 'translateZ(0)' // Hardware acceleration
+                willChange: 'auto', // Removido willChange agressivo
+                transform: 'translateZ(0)', // Hardware acceleration
+                backfaceVisibility: 'hidden', // Melhora performance
+                perspective: 1000 // Otimização 3D
               }}
             >
-              <Image
-                src="/assets/backgrounds/2.svg"
-                alt="Background Pattern"
-                width={700}
-                loading="lazy"
-                priority={false}
-                height={600}
-                style={{
-                  opacity: 1,
-                  pointerEvents: 'none',
-                  userSelect: 'none',
-                  marginTop: '-50px'
-                }}
-              />
+              <picture>
+                <source 
+                  srcSet="/assets/backgrounds/2-optimized.webp" 
+                  type="image/webp"
+                />
+                <source 
+                  srcSet="/assets/backgrounds/2-optimized.png" 
+                  type="image/png"
+                />
+                <img
+                  src="/assets/backgrounds/2-optimized.png"
+                  alt="Background Pattern"
+                  width={700}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    opacity: 1,
+                    pointerEvents: 'none',
+                    userSelect: 'none',
+                    marginTop: '-50px',
+                    imageRendering: 'optimizeSpeed', // Prioriza velocidade
+                    contain: 'layout style paint' // CSS containment
+                  }}
+                />
+              </picture>
             </motion.div>
           )}
         </div>

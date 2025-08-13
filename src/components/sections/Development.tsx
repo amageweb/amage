@@ -40,6 +40,12 @@ const testimonials = [
 ]
 
 export default function Development() {
+  // SEÇÃO DE FEEDBACKS COMENTADA TEMPORARIAMENTE - AGUARDANDO MAIS FEEDBACKS DE CLIENTES
+  return null
+}
+
+/* CÓDIGO ORIGINAL PRESERVADO PARA USO FUTURO
+export default function Development() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isMobile, setIsMobile] = useState(false)
@@ -70,7 +76,6 @@ export default function Development() {
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-        {/* Título */}
         <motion.div
           style={{
             textAlign: 'center',
@@ -104,7 +109,6 @@ export default function Development() {
           
         </motion.div>
         
-        {/* Testimonials Carousel */}
         <motion.div
           style={{
             marginTop: isMobile ? '40px' : '80px',
@@ -117,7 +121,6 @@ export default function Development() {
           <TestimonialsCarousel testimonials={testimonials} duration={15} />
         </motion.div>
         
-        {/* CTA Emocional */}
         <motion.div
           style={{
             marginTop: isMobile ? '60px' : '120px'
@@ -143,3 +146,4 @@ export default function Development() {
     </section>
   )
 }
+*/

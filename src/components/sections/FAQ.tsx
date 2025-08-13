@@ -47,12 +47,15 @@ export default function FAQ() {
       id="faq" 
       ref={ref}
       style={{
-        paddingTop: '0px',
+        paddingTop: isMobile ? '80px' : '100px',
         paddingRight: '20px',
         paddingBottom: isMobile ? '180px' : '300px',
         paddingLeft: '20px',
         background: '#E3E3E5',
-        position: 'relative'
+        position: 'relative',
+        borderTopLeftRadius: isMobile ? '20px' : '40px',
+        borderTopRightRadius: isMobile ? '20px' : '40px',
+        marginTop: isMobile ? '-20px' : '-40px'
       }}
     >
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -74,7 +77,7 @@ export default function FAQ() {
             color: '#151515',
             fontFamily: 'Nugros, sans-serif'
           }}>
-            Dúvidas<span style={{ color: '#6F278B' }}>?</span>
+            Dúvidas<span style={{ color: '#151515' }}>?</span>
           </h2>
           
           {/* Divisória minimalista */}

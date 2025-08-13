@@ -59,12 +59,12 @@ export default function Portfolio() {
     },
     {
       id: 5,
-      name: 'Em breve',
-      category: 'Novo projeto',
-      image: null,
+      name: 'Home Disney',
+      category: 'Locação de Casas em Orlando',
+      image: '/portfolios./home-disney.jpeg',
       url: null,
       featured: false,
-      description: 'Novo projeto em desenvolvimento'
+      description: 'Empresa de locação de casas para temporada em Orlando'
     },
     {
       id: 6,
@@ -82,7 +82,7 @@ export default function Portfolio() {
       id="portfolio" 
       ref={ref}
       style={{
-        padding: isMobile ? '40px 20px 60px 20px' : '60px 20px 120px 20px',
+        padding: isMobile ? '40px 20px 40px 20px' : '60px 20px 60px 20px',
         background: '#000000',
         position: 'relative',
         overflow: 'hidden'
@@ -100,7 +100,7 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
           >
             <h2 style={{
-              fontSize: isMobile ? '2rem' : 'clamp(2.5rem, 5vw, 4rem)',
+              fontSize: isMobile ? '1.5rem' : 'clamp(2rem, 3.5vw, 2.5rem)',
               fontWeight: 500,
               marginBottom: '20px',
               letterSpacing: '-0.03em',
@@ -145,7 +145,7 @@ export default function Portfolio() {
             maxWidth: '1200px',
             marginTop: '0',
             marginRight: 'auto',
-            marginBottom: isMobile ? '60px' : '100px',
+            marginBottom: isMobile ? '30px' : '40px',
             marginLeft: 'auto'
           }}>
             {projects.map((project, index) => (
@@ -164,7 +164,7 @@ export default function Portfolio() {
                 transition={{ duration: 0.6, delay: 0.1 * index }}
                 whileHover={{
                   scale: 1.02,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.15 }
                 }}
                 onClick={() => project.url && window.open(project.url, '_blank')}
               >
@@ -200,7 +200,7 @@ export default function Portfolio() {
                           opacity: 0
                         }}
                         whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 0.15 }}
                       >
                         <div style={{
                           display: 'flex',
@@ -284,7 +284,7 @@ export default function Portfolio() {
           <motion.div
             style={{
               textAlign: 'center',
-              marginTop: isMobile ? '40px' : '0'
+              marginTop: '0'
             }}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
