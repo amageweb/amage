@@ -82,7 +82,7 @@ export default function Portfolio() {
       id="portfolio" 
       ref={ref}
       style={{
-        padding: isMobile ? '40px 20px 40px 20px' : '60px 20px 60px 20px',
+        padding: isMobile ? '40px 20px 80px 20px' : '60px 20px 100px 20px',
         background: '#000000',
         position: 'relative',
         overflow: 'hidden'

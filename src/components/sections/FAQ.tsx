@@ -47,7 +47,7 @@ export default function FAQ() {
       id="faq" 
       ref={ref}
       style={{
-        paddingTop: isMobile ? '80px' : '100px',
+        paddingTop: isMobile ? '40px' : '60px',
         paddingRight: '20px',
         paddingBottom: isMobile ? '180px' : '300px',
         paddingLeft: '20px',
