@@ -103,7 +103,7 @@ export default function Process() {
               marginBottom: '60px'
             }}
           >
-            <h2 style={{ 
+            <h2 style={{
               fontSize: 'clamp(1.75rem, 5vw, 2.5rem)',
               fontWeight: 700,
               lineHeight: '1.1',
@@ -113,7 +113,7 @@ export default function Process() {
               fontFamily: 'Nugros, sans-serif'
             }}>
               Nosso processo de{' '}
-              <span style={{ color: '#6F278B' }}>
+              <span style={{ color: '#A783ED' }}>
                 desenvolvimento
               </span>
             </h2>
@@ -213,7 +213,7 @@ export default function Process() {
                   <div style={{
                     fontSize: '0.75rem',
                     fontWeight: '400',
-                    color: '#9B4FBF',
+                    color: '#A783ED',
                     fontFamily: 'Nugros, sans-serif',
                     marginBottom: '8px',
                     letterSpacing: '0.1em'
@@ -266,7 +266,7 @@ export default function Process() {
               textAlign: 'center',
               zIndex: 10
             }}>
-              <motion.h2 style={{ 
+              <motion.h2 style={{
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
                 lineHeight: '1.1',
@@ -277,22 +277,10 @@ export default function Process() {
                 opacity: 1
               }}>
                 Nosso processo de{' '}
-                <span style={{ color: '#6F278B' }}>
+                <span style={{ color: '#A783ED' }}>
                   desenvolvimento
                 </span>
               </motion.h2>
-              
-              <motion.div 
-                style={{
-                  height: '1px',
-                  background: 'linear-gradient(to right, transparent, rgba(111, 39, 139, 0.3), transparent)',
-                  width: '300px',
-                  margin: '0 auto'
-                }}
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              />
             </div>
 
             <motion.div 
@@ -327,7 +315,7 @@ export default function Process() {
                   <div style={{
                     fontSize: '1.2rem',
                     fontWeight: '400',
-                    color: '#9B4FBF',
+                    color: '#A783ED',
                     fontFamily: 'Nugros, sans-serif',
                     marginBottom: '20px',
                     letterSpacing: '0.05em'
@@ -378,7 +366,7 @@ export default function Process() {
                   <div style={{
                     fontSize: '1.2rem',
                     fontWeight: '400',
-                    color: '#9B4FBF',
+                    color: '#A783ED',
                     fontFamily: 'Nugros, sans-serif',
                     marginBottom: '20px',
                     letterSpacing: '0.05em'
@@ -429,7 +417,7 @@ export default function Process() {
                   <div style={{
                     fontSize: '1.2rem',
                     fontWeight: '400',
-                    color: '#9B4FBF',
+                    color: '#A783ED',
                     fontFamily: 'Nugros, sans-serif',
                     marginBottom: '20px',
                     letterSpacing: '0.05em'
@@ -480,7 +468,7 @@ export default function Process() {
                   <div style={{
                     fontSize: '1.2rem',
                     fontWeight: '400',
-                    color: '#9B4FBF',
+                    color: '#A783ED',
                     fontFamily: 'Nugros, sans-serif',
                     marginBottom: '20px',
                     letterSpacing: '0.05em'
@@ -543,7 +531,7 @@ export default function Process() {
             </div>
           </div>
 
-          <div style={{ height: `${steps.length * 150}vh` }} />
+          <div style={{ height: `${steps.length * 100}vh` }} />
         </>
       )}
     </section>

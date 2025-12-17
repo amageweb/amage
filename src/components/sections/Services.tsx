@@ -249,12 +249,12 @@ export default function Services() {
             width: '100%'
           }}>
             {/* Título sempre visível */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              style={{ 
-                textAlign: 'center', 
+              style={{
+                textAlign: 'center',
                 marginBottom: '80px',
                 marginTop: isMobile ? '20px' : '120px'
               }}
@@ -266,37 +266,11 @@ export default function Services() {
                   letterSpacing: '-0.03em',
                   lineHeight: 1.1,
                   fontFamily: 'Nugros, sans-serif',
-                  color: '#fff',
-                  marginBottom: '20px'
+                  color: '#fff'
                 }}
               >
-                <span style={{ 
-                  display: 'inline-block',
-                  position: 'relative',
-                  color: '#fff'
-                }}>
-                  Nossos Serviços
-                  <span
-                    style={{
-                      position: 'absolute',
-                      bottom: '-10px',
-                      left: '20%',
-                      right: '20%',
-                      height: '2px',
-                      background: 'linear-gradient(90deg, rgba(111, 39, 139, 0.3) 0%, rgba(111, 39, 139, 0.8) 50%, rgba(111, 39, 139, 0.3) 100%)'
-                    }}
-                  />
-                </span>
+                Nossos Serviços
               </h1>
-              <p style={{
-                fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
-                fontWeight: 300,
-                color: 'rgba(255, 255, 255, 0.6)',
-                letterSpacing: '0.02em',
-                fontFamily: 'Nugros, sans-serif'
-              }}>
-                Soluções digitais que transformam negócios
-              </p>
             </motion.div>
 
             {/* Grid de serviços */}

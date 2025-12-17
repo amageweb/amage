@@ -46,7 +46,7 @@ const Hero = memo(function Hero() {
   const [isBlocked, setIsBlocked] = useState(false)
   const [showMessage, setShowMessage] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 640)
@@ -140,12 +140,12 @@ const Hero = memo(function Hero() {
           } : { opacity: 0, y: 40, scale: 0.9 }}
           className="text-center max-w-7xl mx-auto -translate-y-6 sm:-translate-y-14"
         >
-          <motion.h1 
-            className="py-4 sm:py-6 md:py-8 text-4xl xs:text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-medium leading-[1.1] tracking-tight font-figtree text-white drop-shadow-2xl" 
+          <motion.h1
+            className="py-4 sm:py-6 md:py-8 text-4xl xs:text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-medium leading-[1.1] tracking-tight font-figtree text-white drop-shadow-2xl"
             style={titleTextStyle}
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-            animate={isTransitionComplete ? { 
-              opacity: 1, 
+            animate={isTransitionComplete ? {
+              opacity: 1,
               y: 0,
               filter: "blur(0px)",
               transition: {
@@ -475,30 +475,17 @@ const Hero = memo(function Hero() {
           >
             <div className="inline-flex items-center gap-1.5">
               <span>🎉</span>
-              {isMobile ? (
-                <span style={{ textAlign: 'left' }}>
-                  Confete acabou, mas o impacto de<br />
-                  um bom site é duradouro!{' '}
-                  <a 
-                    href="#contato" 
-                    className="underline hover:text-white transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Vamos conversar?
-                  </a>
-                </span>
-              ) : (
-                <span>
-                  Confete acabou, mas o impacto de um bom site é duradouro!{' '}
-                  <a 
-                    href="#contato" 
-                    className="underline hover:text-white transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Vamos conversar?
-                  </a>
-                </span>
-              )}
+              <span style={{ textAlign: 'left' }}>
+                Confete acabou, mas o impacto<br />
+                de um bom site é duradouro!{' '}
+                <a
+                  href="#contato"
+                  className="underline hover:text-white transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Vamos conversar?
+                </a>
+              </span>
             </div>
           </motion.div>
         )}

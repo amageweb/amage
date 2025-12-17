@@ -101,7 +101,7 @@ export default function Portfolio() {
           >
             <h2 style={{
               fontSize: isMobile ? '1.5rem' : 'clamp(2rem, 3.5vw, 2.5rem)',
-              fontWeight: 500,
+              fontWeight: 700,
               marginBottom: '20px',
               letterSpacing: '-0.03em',
               color: '#ffffff',
@@ -134,7 +134,6 @@ export default function Portfolio() {
                 />
               </motion.div>
             </h2>
-            
           </motion.div>
 
           {/* Grid de projetos */}
@@ -290,7 +289,10 @@ export default function Portfolio() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <motion.button
+            <motion.a
+              href="https://wa.me/5554999629799?text=Olá! Quero fazer um orçamento para um site."
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 background: '#6F278B',
                 color: '#ffffff',
@@ -304,16 +306,17 @@ export default function Portfolio() {
                 letterSpacing: '0.02em',
                 transition: 'all 0.3s ease',
                 display: 'inline-flex',
-                alignItems: 'center'
+                alignItems: 'center',
+                textDecoration: 'none'
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.03,
                 boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)'
               }}
               whileTap={{ scale: 0.98 }}
             >
               Quero ver meu site aqui
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>

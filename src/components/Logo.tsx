@@ -3,9 +3,16 @@
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { usePageTransition } from '@/contexts/PageTransitionContext'
 
 export default function Logo() {
+  const pathname = usePathname()
+
+  // Não renderiza na página /links
+  if (pathname === '/links') {
+    return null
+  }
   const [isVisible, setIsVisible] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)

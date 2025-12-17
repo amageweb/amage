@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { usePageTransition } from '@/contexts/PageTransitionContext'
 
 interface NavItem {
@@ -18,6 +19,12 @@ const navItems: NavItem[] = [
 ]
 
 export default function Header() {
+  const pathname = usePathname()
+
+  // Não renderiza na página /links
+  if (pathname === '/links') {
+    return null
+  }
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [activeSection, setActiveSection] = useState('home')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -155,16 +162,20 @@ export default function Header() {
                     onMouseLeave={() => setHoveredIndex(null)}
                     className="relative block px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
                   >
-                    {/* Hover underline effect */}
+                    {/* Hover background effect */}
                     <AnimatePresence>
                       {isHovered && (
                         <motion.div
-                          className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-600 to-pink-600"
-                          initial={{ scaleX: 0, opacity: 0 }}
-                          animate={{ scaleX: 1, opacity: 1 }}
-                          exit={{ scaleX: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeOut" }}
-                          style={{ transformOrigin: 'right' }}
+                          className="absolute inset-0 rounded-md"
+                          style={{
+                            backgroundColor: isDarkBackground
+                              ? 'rgba(167, 131, 237, 0.15)'
+                              : 'rgba(111, 39, 139, 0.1)'
+                          }}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.9 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
                         />
                       )}
                     </AnimatePresence>
@@ -174,10 +185,11 @@ export default function Header() {
                     <motion.span
                       className="relative z-10"
                       animate={{
-                        color: isDarkBackground 
+                        color: isDarkBackground
                           ? (isActive ? '#ffffff' : isHovered ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.8)')
                           : (isActive ? '#151515' : isHovered ? 'rgba(21, 21, 21, 0.9)' : 'rgba(21, 21, 21, 0.8)'),
                         y: isHovered ? -1 : 0,
+                        scale: isHovered ? 1.05 : 1,
                       }}
                       transition={{ duration: 0.2 }}
                     >

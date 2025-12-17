@@ -113,7 +113,7 @@ export default function About() {
             animate={!isMobile && isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <h1 style={{ 
+            <h1 style={{
               fontSize: isMobile ? '1.75rem' : 'clamp(2rem, 4vw, 3rem)',
               fontWeight: 700,
               lineHeight: '1.1',
@@ -125,16 +125,14 @@ export default function About() {
               opacity: 1,
               visibility: 'visible'
             }}>
-              <span style={{ 
+              <span style={{
                 display: 'inline-block',
                 position: 'relative',
                 color: '#151515'
               }}>
                 O que torna nosso
                 <br />
-                <span style={{ 
-                  color: '#6F278B'
-                }}>
+                <span style={{ color: '#6F278B' }}>
                   trabalho diferente?
                 </span>
               </span>

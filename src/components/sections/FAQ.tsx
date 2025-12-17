@@ -77,22 +77,8 @@ export default function FAQ() {
             color: '#151515',
             fontFamily: 'Nugros, sans-serif'
           }}>
-            Dúvidas<span style={{ color: '#151515' }}>?</span>
+            Dúvidas?
           </h2>
-          
-          {/* Divisória minimalista */}
-          <motion.div 
-            style={{
-              height: '1px',
-              background: 'linear-gradient(to right, transparent, rgba(111, 39, 139, 0.3), transparent)',
-              width: isMobile ? '200px' : '300px',
-              margin: '0 auto 20px auto'
-            }}
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          />
-          
         </motion.div>
         
         {/* FAQ Items */}

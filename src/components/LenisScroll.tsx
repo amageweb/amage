@@ -8,16 +8,25 @@ export default function LenisScroll({ children }: { children: React.ReactNode })
     // Desabilitar Lenis no mobile
     const isMobile = window.innerWidth < 768
     if (isMobile) {
+      // No mobile, ainda assim scrollar para o hash se existir
+      if (window.location.hash) {
+        setTimeout(() => {
+          const element = document.querySelector(window.location.hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 500)
+      }
       return
     }
-    
+
     const lenis = new Lenis({
-      duration: 1,
+      duration: 0.6,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.8,
+      wheelMultiplier: 1.2,
       infinite: false,
     })
 
@@ -28,6 +37,16 @@ export default function LenisScroll({ children }: { children: React.ReactNode })
     }
 
     requestAnimationFrame(raf)
+
+    // Scroll para o hash da URL se existir (ex: #portfolio)
+    if (window.location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(window.location.hash)
+        if (element) {
+          lenis.scrollTo(element, { offset: 0 })
+        }
+      }, 500)
+    }
 
     return () => {
       if (rafId) {
