@@ -219,7 +219,7 @@ const Hero = memo(function Hero() {
                 className="inline-flex"
               >
                 <motion.a
-                  href="#projetos"
+                  href="#portfolio"
                   className="group relative inline-flex items-center gap-2 text-white transition-all duration-300 hover:text-white/80"
                 >
                   <span className="text-base font-medium tracking-wide underline underline-offset-8 decoration-1">

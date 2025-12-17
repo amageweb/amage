@@ -143,7 +143,7 @@ export default function WhatsAppWeb() {
             setIsTyping(false)
             
             setTimeout(() => {
-              window.open('https://wa.me/5554996299799?text=Olá! Quero fazer um orçamento para um site.', '_blank')
+              window.open('https://wa.me/5554999629799?text=Olá! Quero fazer um orçamento para um site.', '_blank')
             }, 1500)
           }, 1000)
         }, 500)

@@ -21,7 +21,7 @@ export default function Loader({ onLoadComplete }: LoaderProps) {
     link.crossOrigin = 'anonymous'
     document.head.appendChild(link)
     
-    const duration = 3500 // 3.5 seconds
+    const duration = 1200 // 1.2 seconds - bem rápido
     const interval = 20 // Update every 20ms
     const increment = 100 / (duration / interval)
 

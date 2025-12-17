@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: "Em quanto tempo o site fica pronto?",
-    answer: "Sites simples podem ser entregues em até 15 dias, enquanto projetos mais completos levam no máximo 30 dias."
+    answer: "Sites simples podem ser entregues em até 15 dias, enquanto projetos mais completos levam no máximo 45 dias."
   },
   {
     question: "E se eu precisar de alguma alteração depois que o site ficar pronto?",

@@ -21,38 +21,38 @@ export default function Portfolio() {
 
   // Projetos em destaque primeiro, depois os demais
   const projects = [
-    { 
-      id: 1, 
-      name: 'Capital Million', 
-      category: 'Plataforma de Investimentos',
-      image: '/portfolios./million-site.png',
+    {
+      id: 1,
+      name: 'Capital Million',
+      category: 'Site Institucional',
+      image: '/portfolios/million-site.png',
       url: 'https://capitalmillion.com',
       featured: true,
       description: 'Plataforma moderna para investimentos e educação financeira'
     },
-    { 
-      id: 2, 
-      name: 'Lorena Jacob', 
+    {
+      id: 2,
+      name: 'Lorena Jacob',
       category: 'E-commerce & Terapia Infantil',
-      image: '/portfolios./lorena-site.jpeg',
+      image: '/portfolios/lorena-site.jpeg',
       url: 'https://lorenajacob.com.br',
       featured: true,
       description: 'Loja online e portal de serviços terapêuticos especializados'
     },
-    { 
-      id: 3, 
-      name: 'DB Representações', 
+    {
+      id: 3,
+      name: 'DB Representações',
       category: 'Site Institucional',
-      image: '/portfolios./db-site.png',
+      image: '/portfolios/db-site.png',
       url: 'https://deboff.com.br',
       featured: true,
       description: 'Portal corporativo para empresa de representações comerciais'
     },
-    { 
-      id: 4, 
-      name: 'Renata Volpatto', 
+    {
+      id: 4,
+      name: 'Renata Volpatto',
       category: 'Advocacia Especializada',
-      image: '/portfolios./renata-site.png',
+      image: '/portfolios/renata-site.png',
       url: 'https://www.renatavolpatto.com',
       featured: false,
       description: 'Site institucional para escritório de advocacia'
@@ -61,19 +61,19 @@ export default function Portfolio() {
       id: 5,
       name: 'Home Disney',
       category: 'Locação de Casas em Orlando',
-      image: '/portfolios./home-disney.jpeg',
-      url: null,
+      image: '/portfolios/home-disney.jpeg',
+      url: 'https://www.homedisneyvacation.com/',
       featured: false,
       description: 'Empresa de locação de casas para temporada em Orlando'
     },
     {
       id: 6,
-      name: 'Em breve',
-      category: 'Novo projeto',
-      image: null,
-      url: null,
+      name: 'Bozza Contabilidade',
+      category: 'Escritório de Contabilidade',
+      image: '/portfolios/bozzacontabilidade.site.png',
+      url: 'https://www.bozzacontabilidade.com',
       featured: false,
-      description: 'Novo projeto em desenvolvimento'
+      description: 'Escritório de contabilidade e assessoria empresarial'
     }
   ]
 
@@ -109,20 +109,20 @@ export default function Portfolio() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: isMobile ? '5px' : '8px',
+              gap: isMobile ? '12px' : '20px',
               flexDirection: isMobile ? 'column' : 'row'
             }}>
-              Portfólio 
+              Portfólio
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.2 }}
                 style={{
                   display: 'inline-block',
-                  marginTop: isMobile ? '0' : '8px',
+                  marginTop: isMobile ? '0' : '12px',
                   cursor: 'pointer'
                 }}
               >
-                <Image 
+                <Image
                   src="/logos/logoWhite.svg"
                   alt="Amage"
                   width={isMobile ? 120 : 160}
@@ -140,9 +140,9 @@ export default function Portfolio() {
           {/* Grid de projetos */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: isMobile ? '20px' : '24px',
-            maxWidth: '1200px',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+            gap: isMobile ? '24px' : '30px',
+            maxWidth: '1400px',
             marginTop: '0',
             marginRight: 'auto',
             marginBottom: isMobile ? '30px' : '40px',
@@ -171,7 +171,7 @@ export default function Portfolio() {
                 {/* Imagem do projeto - tela completa */}
                 <div style={{
                   width: '100%',
-                  height: isMobile ? '180px' : '200px',
+                  height: isMobile ? '220px' : '280px',
                   position: 'relative',
                   overflow: 'hidden',
                   background: project.image ? '#000' : 'linear-gradient(135deg, rgba(111, 39, 139, 0.1), rgba(111, 39, 139, 0.05))'
