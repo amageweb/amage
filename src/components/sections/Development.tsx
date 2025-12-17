@@ -1,12 +1,14 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
-import { TestimonialsCarousel } from '@/components/TestimonialsCarousel'
-import { Cta4 } from '@/components/ui/cta-4'
+// Imports comentados - serão usados quando a seção for reativada
+// import { motion } from 'framer-motion'
+// import { useInView } from 'framer-motion'
+// import { useRef, useState, useEffect } from 'react'
+// import { TestimonialsCarousel } from '@/components/TestimonialsCarousel'
+// import { Cta4 } from '@/components/ui/cta-4'
 
-const testimonials = [
+// Testimonials comentados - serão usados quando a seção for reativada
+/* const testimonials = [
   {
     text: "A Amage transformou completamente nossa presença digital. O site ficou moderno, rápido e nossos clientes adoraram a nova experiência.",
     name: "Carlos Eduardo Silva",
@@ -37,7 +39,7 @@ const testimonials = [
     name: "Mariana Oliveira",
     company: "Clínica Bem Estar"
   }
-]
+] */
 
 export default function Development() {
   // SEÇÃO DE FEEDBACKS COMENTADA TEMPORARIAMENTE - AGUARDANDO MAIS FEEDBACKS DE CLIENTES

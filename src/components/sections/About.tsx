@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import Image from 'next/image'
 
 export default function About() {
   const ref = useRef(null)
@@ -220,7 +219,7 @@ export default function About() {
                     pointerEvents: 'none',
                     userSelect: 'none',
                     marginTop: '-50px',
-                    imageRendering: 'optimizeSpeed', // Prioriza velocidade
+                    imageRendering: 'auto', // Renderização padrão
                     contain: 'layout style paint' // CSS containment
                   }}
                 />
