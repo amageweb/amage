@@ -28,7 +28,8 @@
       "Bash(npm run build:*)",
       "Bash(cp:*)",
       "Bash(npm run build:*)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(npm view:*)"
     ],
     "deny": []
   }
