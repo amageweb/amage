@@ -8,16 +8,14 @@ import { usePageTransition } from '@/contexts/PageTransitionContext'
 
 export default function Logo() {
   const pathname = usePathname()
-
-  // Não renderiza na página /links
-  if (pathname === '/links') {
-    return null
-  }
   const [isVisible, setIsVisible] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { isTransitionComplete } = usePageTransition()
   const { scrollY } = useScroll()
+
+  // Não renderiza na página /links
+  const isLinksPage = pathname === '/links'
   
   useEffect(() => {
     const checkMobile = () => {
@@ -107,7 +105,7 @@ export default function Logo() {
     }
   }
 
-  if (!isTransitionComplete) return null
+  if (!isTransitionComplete || isLinksPage) return null
 
   return (
     <AnimatePresence>

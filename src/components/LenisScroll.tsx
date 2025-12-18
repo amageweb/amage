@@ -41,7 +41,7 @@ export default function LenisScroll({ children }: { children: React.ReactNode })
     // Scroll para o hash da URL se existir (ex: #portfolio)
     if (window.location.hash) {
       setTimeout(() => {
-        const element = document.querySelector(window.location.hash)
+        const element = document.querySelector(window.location.hash) as HTMLElement | null
         if (element) {
           lenis.scrollTo(element, { offset: 0 })
         }

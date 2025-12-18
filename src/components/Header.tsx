@@ -20,16 +20,14 @@ const navItems: NavItem[] = [
 
 export default function Header() {
   const pathname = usePathname()
-
-  // Não renderiza na página /links
-  if (pathname === '/links') {
-    return null
-  }
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [activeSection, setActiveSection] = useState('home')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isDarkBackground, setIsDarkBackground] = useState(true)
   const { isTransitionComplete } = usePageTransition()
+
+  // Não renderiza na página /links
+  const isLinksPage = pathname === '/links'
 
 
   // Detecta seção ativa e cor de fundo
@@ -133,7 +131,7 @@ export default function Header() {
     }
   }
 
-  if (!isTransitionComplete) return null
+  if (!isTransitionComplete || isLinksPage) return null
 
   return (
     <React.Fragment>
